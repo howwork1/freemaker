@@ -2,6 +2,7 @@ package com.fm.framework.core.query;
 
 import lombok.Data;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -26,7 +27,7 @@ public class PageInfo<E> implements Page<E> {
     /**
      * 分页查询后的数据
      */
-    private List<E> data;
+    private Collection<E> data;
 
     /**
      * 数据总数量

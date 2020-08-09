@@ -124,6 +124,18 @@ public abstract class BaseService<M extends BaseMapper<T>, T extends BaseModel> 
         return result;
     }
 
+    @Override
+    public boolean delete(Long id) {
+
+        if(Objects.isNull(id)) {
+            return false;
+        }
+
+        T model = this.get(id);
+
+        return delete(model);
+    }
+
     public boolean delete(List<T> model) {
 
         if(model.isEmpty()) {
@@ -146,6 +158,7 @@ public abstract class BaseService<M extends BaseMapper<T>, T extends BaseModel> 
         return result;
 
     }
+
 
     public boolean update(T model) {
         boolean result;
@@ -429,5 +442,6 @@ public abstract class BaseService<M extends BaseMapper<T>, T extends BaseModel> 
         pageInfo.setData(mybatisPlusPage.getRecords());
         return pageInfo;
     }
+
 
 }

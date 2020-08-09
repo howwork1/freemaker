@@ -65,6 +65,13 @@ public interface Service<T extends BaseModel> {
     boolean delete(T model);
 
     /**
+     * 删除数据
+     * @param id 待删除的数据ID
+     * @return 是否成功
+     */
+    boolean delete(Long id);
+
+    /**
      * 根据ID过去数据
      * @param id id
      * @return id获取的数据
